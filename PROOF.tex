@@ -68,6 +68,16 @@ order. Gl\"ucksam and Pardo-Sim\'on \cite{GP} constructed an approximate
 analogue of the second property, with many separated arcs on which
 the modulus is close to its maximum.
 
+There is also a classical local theory near the origin. Hayman
+\cite{Hayman} proved that for \(f\) as in \eqref{eq:taylor}, the
+maximum modulus set near zero consists of at most \(k\) analytic
+curves. Evdoridou, Pardo-Sim\'on, and Sixsmith \cite{EPS} refined
+this description, determining the exact number of local maximum
+curves outside an algebraically defined exceptional class and showing
+that each such curve contains exactly one point of each sufficiently
+small positive modulus. In particular, \(\nu_f(r)\le k\) for all
+sufficiently small \(r\).
+
 We prove that the answer to the second question is negative.
 
 \begin{theorem}\label{thm:main}
@@ -302,6 +312,9 @@ Remove the zero coordinates, poles, and common value \(m\), and set
  \X^*&=\{(z,w)\in\X:zw\ne0,\ A(z)=B(w)\in\C\setminus\{m\}\},\\
  \B&=\C^*\times(\C\setminus\{m\}).
 \end{align*}
+On each irreducible component of \(\X\), the deleted locus is
+discrete. Thus every irreducible component of \(\X^*\) is obtained
+from one of \(\X\) by deleting a discrete set.
 Consider the holomorphic map
 \begin{equation}\label{eq:Phi}
  \Phi:\X^*\longrightarrow\B,
@@ -340,24 +353,24 @@ There is a locally finite set \(T\subset\Gamma\) such that
 \end{proposition}
 
 \begin{proof}
-The proper mapping theorem and Lemma~\ref{lem:proper} imply that
-\(\Gamma\) is a closed analytic curve; see
-\cite[Chapter IV, Section 1, Corollary 2]{Herve} for the finite-fibre
-projection theorem.
+By Remmert's proper mapping theorem and Lemma~\ref{lem:proper},
+\(\Gamma\) is a closed analytic curve.
 Let \(T\) consist of the singular points of \(\Gamma\) together with
 the images of the singular and ramification points of \(\X^*\), where
 ramification is understood on the normalization of each source
-component. These sets are locally finite, since the singular and
-ramification loci are discrete and \(\Phi\) is proper.
+component. The map is nonconstant on every source component, so its
+ramification locus is discrete; properness then makes these exceptional
+sets locally finite in \(\Gamma\).
 
 For each irreducible component \(\Gamma_i\) of \(\Gamma\), the map
 \[
  \Phi^{-1}(\Gamma_i\setminus T)\longrightarrow\Gamma_i\setminus T
 \]
-is a finite covering. The regular part of an irreducible curve remains
-connected after deletion of a locally finite set; see
-\cite[Chapter IV, Section 3, Corollary 1]{Herve}. Hence there is an
-integer \(d_i\) such that
+is a finite covering. The normalization of \(\Gamma_i\) is a connected
+Riemann surface, and deleting a locally finite set leaves it connected.
+Since \(T\) contains the singular points of \(\Gamma\), it follows that
+\(\Gamma_i\setminus T\) is connected. Hence there is an integer
+\(d_i\) such that
 \begin{equation}\label{eq:degree}
  \#\Phi^{-1}(s,\lambda)=d_i
  \qquad\bigl((s,\lambda)\in\Gamma_i\setminus T\bigr).
@@ -380,10 +393,9 @@ Hence
  \qquad(0<|s|<\eta^2).
 \end{equation}
 
-Each irreducible component of \(\X^*\) comes from an irreducible
-component of \(\X\), and its image under \(\Phi\) is an irreducible
-component of \(\Gamma\). Every component of \(\Gamma\) arises in this
-way.
+The image of each irreducible component of \(\X^*\) is an
+irreducible component of \(\Gamma\), and every component of
+\(\Gamma\) arises in this way.
 Lemma~\ref{lem:small-products} therefore shows that each \(\Gamma_i\)
 meets \(\{0<|s|<\eta^2\}\).
 This intersection is a nonempty open subset of a curve, so it is
@@ -464,23 +476,20 @@ For \(k\ge1\), the function
  =R^2+\frac12
    -2R^2\left(\cos\phi-\frac1{2R}\right)^2.
 \]
-For \(R>1/2\), the maximum is attained precisely when
-\(\cos(k\theta)=1/(2R)\), giving \(2k\) distinct points.
-Thus the bound in Theorem~\ref{thm:main} is sharp for every \(k\).
+For \(0<R\le1/2\), the maximum is attained when
+\(\cos(k\theta)=1\), giving \(k\) distinct points. For \(R>1/2\),
+it is attained precisely when \(\cos(k\theta)=1/(2R)\), giving
+\(2k\) distinct points. Thus the bound in Theorem~\ref{thm:main}
+is sharp for every \(k\).
 \end{remark}
 
 \section*{AI use disclosure}
 
-Generative AI tools were used substantially during the development of
-this work. OpenAI's GPT-6, accessed through Codex, was used to develop
-parts of the proof, including the logarithmic-derivative formulation,
-the implicit-function and direct-tract argument in
-Section~\ref{sec:products}, the finite-map argument in
-Section~\ref{sec:finite}, and the sharpness example in
-Remark~\ref{rem:sharp}. It was also used for literature search, proof
-checking, and language and \LaTeX{} editing. The author reviewed and
-verified the mathematical arguments and references and takes full
-responsibility for the manuscript.
+GPT-6 Astra was used to generate the mathematical proofs and draft the
+manuscript. GPT-5.6 Sol and Claude Opus 5 were used only for editorial
+review of the exposition and did not contribute to the mathematical
+arguments. The author reviewed the final manuscript and takes full
+responsibility for its content.
 
 \begin{thebibliography}{9}
 
@@ -504,6 +513,13 @@ A.~Eremenko,
 note, 4 April 2015.
 \url{https://www.math.purdue.edu/~eremenko/dvi/gross2.pdf}.
 
+\bibitem{EPS}
+V.~Evdoridou, L.~Pardo-Sim\'on, and D.~J. Sixsmith,
+On a result of Hayman concerning the maximum modulus set,
+\emph{Computational Methods and Function Theory} \textbf{21} (2021),
+779--795.
+\href{https://arxiv.org/abs/2012.07409}{arXiv:2012.07409}.
+
 \bibitem{GP}
 A.~Gl\"ucksam and L.~Pardo-Sim\'on,
 An approximate solution to Erdos' maximum modulus points problem,
@@ -511,13 +527,10 @@ An approximate solution to Erdos' maximum modulus points problem,
 \textbf{531} (2024), no.~1, Article 127768.
 \href{https://arxiv.org/abs/2208.11154}{arXiv:2208.11154}.
 
-\bibitem{Herve}
-M.~Herv\'e,
-\emph{Several Complex Variables: Local Theory},
-Tata Institute of Fundamental Research Studies in Mathematics, vol.~1,
-Oxford University Press, London, 1963.
-\href{https://mathweb.tifr.res.in/Documents/Publications/Studies/SM_01-Several_Complex_Variables.pdf}
-{TIFR digital edition}.
+\bibitem{Hayman}
+W.~K. Hayman,
+A characterization of the maximum modulus of functions regular at the origin,
+\emph{Journal d'Analyse Math\'ematique} \textbf{1} (1951), 135--154.
 
 \bibitem{HP}
 F.~Herzog and G.~Piranian,
