@@ -12,8 +12,8 @@ non-monomial entire function has $\nu_f(r)\to\infty$.
 
 | | |
 |---|---|
-| Manuscript | 7 pages, 5 September 2026 — [`PROOF.pdf`](PROOF.pdf), [`PROOF.tex`](PROOF.tex) |
-| DOI | [10.5281/zenodo.22331977](https://doi.org/10.5281/zenodo.22331977) (always the latest version) |
+| Manuscript | revised, 6 pages, 5 September 2026 — [`PROOF.pdf`](PROOF.pdf), [`PROOF.tex`](PROOF.tex) |
+| DOI | [10.5281/zenodo.22331977](https://doi.org/10.5281/zenodo.22331977) (always the latest version; v2 is [10.5281/zenodo.22332370](https://doi.org/10.5281/zenodo.22332370)) |
 | erdosproblems.com | listed **open** as of 5 September 2026, no proof claims submitted |
 | Refereeing | not yet refereed |
 
@@ -28,11 +28,9 @@ For a non-monomial entire function $f$, let $\nu_f(r)$ be the number of points o
 at which $|f|$ attains its maximum. Write $f(z)=z^m(c_0+c_kz^k+O(z^{k+1}))$, where
 $c_0c_k\neq 0$ and $k\ge 1$. We prove that $\nu_f(r)\le 2k$ outside a countable set of
 radii. In particular, $\nu_f(r)$ cannot tend to infinity, answering the second question of
-Erdős on maximum modulus points. The proof uses continuation of implicit functions and
-growth in direct tracts to study the complex curve $A(z)=\overline{A(\bar w)}$, where
-$A=zf'/f$. On the locus $zw\neq 0$ and $A(z)\notin\\{m,\infty\\}$, the map
-$(z,w)\mapsto(zw,A(z))$ is finite and proper. Counting its fibres near the coordinate axes
-gives the bound. **No growth assumption on $f$ is required.**
+Erdős on maximum modulus points. The proof studies the correspondence
+$A(z)=\overline{A(\bar w)}$, where $A=zf'/f$, using implicit-function continuation, growth
+in a direct tract, and a finite proper map of analytic curves.
 
 ## Main theorem
 
@@ -78,16 +76,14 @@ the map $(z,w)\mapsto(zw,A(z))$ is finite and proper off a small locus, and its 
 count is bounded by the local degree $k$ at each end. Convexity of $\log M$ in $\log r$
 confines the exceptional radii to a countable set.
 
-## AI tool disclosure
+## AI use disclosure
 
-AI tools were used substantially in developing this work. Earlier AI-assisted explorations
-supplied the logarithmic-derivative formulation used in the small-products section and the
-example showing sharpness. OpenAI's GPT-6, accessed through Codex, developed the argument
-combining implicit-function continuation with growth in a direct tract, the finite-map
-bound, and their application to maximum modulus points. GPT-6 was also used for literature
-retrieval, proof checking, and preparation of the English text and LaTeX source.
-Responsibility for the mathematical content and the accuracy of the references rests with
-the author.
+Generative AI tools were used substantially during the development of this work. OpenAI's
+GPT-6, accessed through Codex, was used to develop parts of the proof, including the
+logarithmic-derivative formulation, the implicit-function and direct-tract argument, the
+finite-map argument, and the sharpness example. It was also used for literature search,
+proof checking, and language and LaTeX editing. The author reviewed and verified the
+mathematical arguments and references and takes full responsibility for the manuscript.
 
 ## Citation
 
