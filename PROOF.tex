@@ -40,13 +40,10 @@ Write \(f(z)=z^m(c_0+c_kz^k+O(z^{k+1}))\), where
 We prove that \(\nu_f(r)\le2k\) outside a countable set of radii.
 In particular, \(\nu_f(r)\) cannot tend to infinity, answering the
 second question of Erd\H{o}s on maximum modulus points.
-The proof uses continuation of implicit functions and growth in direct
-tracts to study the complex curve
-\(A(z)=\overline{A(\overline w)}\), where \(A=zf'/f\).
-On the locus \(zw\ne0\) and \(A(z)\notin\{m,\infty\}\), the map
-\((z,w)\mapsto(zw,A(z))\) is finite and proper. Counting its fibres
-near the coordinate axes gives the bound.
-No growth assumption on \(f\) is required.
+The proof studies the correspondence
+\(A(z)=\overline{A(\overline w)}\), where \(A=zf'/f\), using
+implicit-function continuation, growth in a direct tract, and a finite
+proper map of analytic curves.
 \end{abstract}
 
 \section{Introduction}
@@ -93,25 +90,18 @@ The integer \(k\) is the difference between the degrees of the first
 two nonzero terms of \(f\). The factor \(2\) is attained by an explicit
 example given in Remark~\ref{rem:sharp}.
 
-To explain the argument, set \(A=zf'/f\). At any radius where
-\(\log M(r,f)\) is differentiable with respect to \(\log r\), all
-maximum modulus points have the same real value of \(A\).
-Thus they give points \((z,\overline z)\) of the complex curve
-\(A(z)=\overline{A(\overline w)}\), with the same values of both
-\(zw\) and \(A(z)\).
-We study the fibres of the resulting map of curves.
-The main step is to show that every irreducible component contains
-points with \(|zw|\) arbitrarily small. At such points one coordinate
-lies near the origin, where \(A-m\) has local degree \(k\).
-Properness then carries this local count to every component of the
-image, outside a discrete set.
+Set \(A=zf'/f\). At radii where \(\log M(r,f)\) is differentiable
+with respect to \(\log r\), all maximum modulus points have the same
+real value of \(A\). Hence they determine points \((z,\overline z)\)
+on the correspondence \(A(z)=\overline{A(\overline w)}\) with the same
+values of \(zw\) and \(A(z)\). We show that every irreducible component
+of this correspondence contains points with \(|zw|\) arbitrarily small.
+Since \(A-m\) has local degree \(k\) at the origin, the generic fibres
+of the resulting finite proper map have size at most \(2k\).
 
-\section{Two analytic facts}\label{sec:facts}
+\section{Analytic preliminaries}\label{sec:facts}
 
-We use the following consequence of the continuation theorem for
-implicit functions defined by an entire relation.
-
-\begin{lemma}[Julia]\label{lem:continuation}
+\begin{lemma}[Sto\"ilow; see \cite{Eremenko}]\label{lem:continuation}
 Let \(F\) be entire on \(\C^2\), and suppose that
 \[
  F(a,b)=0,\qquad F_w(a,b)\ne0.
@@ -120,24 +110,16 @@ The projection to the \(z\)-plane of the maximal analytic continuation
 of the implicit germ \(w=w(z)\) through \((a,b)\) is dense in \(\C\).
 \end{lemma}
 
-Julia \cite[Section III]{Julia} proves that this projection cannot
-omit a continuum. The stronger Iversen continuation property, due to
-Sto\"ilow, is stated in \cite{Eremenko}: the germ can be continued
-along an arbitrarily small perturbation of any prescribed path
-starting at \(a\). Either statement gives
-Lemma~\ref{lem:continuation}.
-
-The second fact concerns growth in a direct tract. In the formulation
-of Bergweiler, Rippon, and Stallard \cite[Definition 2.1]{BRS}, an
-unbounded domain \(D\subset\C\), with unbounded complement and
-piecewise smooth boundary, is a \emph{direct tract} of \(Q\) if
-\(Q\) is holomorphic in \(D\), continuous on its closure, and
+Following Bergweiler, Rippon, and Stallard
+\cite[Definition 2.1]{BRS}, an unbounded domain \(D\subset\C\), with
+unbounded complement and piecewise smooth boundary, is a
+\emph{direct tract} of \(Q\) if \(Q\) is holomorphic in \(D\),
+continuous on its closure, and
 \[
  |Q|=a\quad\text{on }\partial D,
  \qquad |Q|>a\quad\text{in }D
 \]
-for some \(a>0\). No condition is imposed on \(Q\) outside
-\(\overline D\).
+for some \(a>0\).
 
 \begin{lemma}[Fuchs; see {\cite[Theorem 2.1]{BRS}}]
 \label{lem:tract}
@@ -155,9 +137,6 @@ Then \(u\) is a continuous subharmonic function on \(\C\), and
  \qquad(R\to\infty).
 \end{equation}
 \end{lemma}
-
-The limit in \eqref{eq:tract-growth} has no exceptional radii;
-see \cite[Section~9]{BRS} for a proof.
 
 \section{Small products on the correspondence}\label{sec:products}
 
@@ -195,11 +174,9 @@ They are distinct when \(\lambda\ne m\), and there is a constant
 The corresponding statements hold for \(B\) on
 \(V^\#=\{\overline z:z\in V\}\).
 
-We also require \(\delta\) to differ from the modulus of every
-finite, nonzero critical value of \(B-m\).
-This excludes at most countably many choices.
-The level set \(\{|B-m|=\delta\}\) therefore consists of smooth
-curves that are locally finite in the plane.
+Choose \(\delta\) also so that it is not the modulus of any finite,
+nonzero critical value of \(B-m\). Then
+\(\{|B-m|=\delta\}\) is a locally finite union of smooth curves.
 
 Choose entire functions \(p,q\) with no common zero such that
 \(A=p/q\) and \(q(0)\ne0\). Set
@@ -231,9 +208,10 @@ Every irreducible component \(X\) of \(\X\) contains a sequence
 \end{lemma}
 
 \begin{proof}
-Start with a regular implicit germ on \(X\) at which \(F_w\ne0\).
-Its analytic continuations remain in \(X\).
-Lemma~\ref{lem:continuation} gives a point \((z_0,w_0)\in X\) with
+Choose a regular point of \(X\) at which \(F_w\ne0\) and apply
+Lemma~\ref{lem:continuation} to the corresponding implicit germ.
+Since its projection is dense, the continuation reaches a point
+\((z_0,w_0)\in X\) with
 \[
  z_0\in V\setminus\{0\},\qquad
  0<|A(z_0)-m|<\delta.
@@ -250,12 +228,13 @@ subset of \(U\), the right-hand side remains in a compact subset of
 compact subset of the coordinate disc.
 
 Since \(A'(z_0)\ne0\), the curve \eqref{eq:root-relation} is smooth
-at \((z_0,w_0)\). Let \(Y\) be the irreducible component containing
-its unique local branch there. Analytic continuation gives \(Y\subset X\).
-The projection \(Y\to U\) is still finite and proper, and it is
-nonconstant. Its image is both open and closed in \(U\), so it is
-surjective. We may therefore choose, for any \(w\in U\), a point
-\((z,w)\in Y\) satisfying \eqref{eq:root-bound}.
+at \((z_0,w_0)\). Let \(Y\) be its irreducible component through this
+point. Near \((z_0,w_0)\), it is the same branch as \(X\), hence
+\(Y\subset X\) by the identity theorem for analytic sets. The
+projection \(Y\to U\) is finite, proper, and nonconstant. Its image is
+therefore both open and closed in \(U\), so the projection is
+surjective. Thus every \(w\in U\) has a lift \((z,w)\in Y\), with
+\(z\) satisfying \eqref{eq:root-bound}.
 
 If \(B(b)=m\) for some \(b\in U\), choose \(w_j\to b\) in \(U\),
 with \(w_j\ne0\) and \(B(w_j)\ne m\), and lift these points to \(Y\).
@@ -267,7 +246,6 @@ Suppose now that \(B-m\) has no zero in \(U\), and put
  Q(w)=\frac{\delta}{B(w)-m}.
 \end{equation}
 Every finite boundary point of \(U\) satisfies \(|B-m|=\delta\).
-In particular, no such point is a zero or pole of \(B-m\).
 Thus \(Q\) is holomorphic in \(U\), continuous on \(\overline U\),
 and satisfies
 \[
@@ -366,29 +344,24 @@ The proper mapping theorem and Lemma~\ref{lem:proper} imply that
 \(\Gamma\) is a closed analytic curve; see
 \cite[Chapter IV, Section 1, Corollary 2]{Herve} for the finite-fibre
 projection theorem.
-Let \(T\) consist of the singular points of \(\Gamma\), the images
-of singular points of \(\X^*\), and the critical values of \(\Phi\)
-on the regular part of \(\X^*\).
-These sets are locally finite. For the critical points this follows
-by using local parameters on the normalizations of the source
-branches: \(\lambda=A(z)\) is nonconstant on each component, so its
-derivative is not identically zero. Properness ensures that only
-finitely many such branches need be considered over a compact
-neighbourhood in the target.
+Let \(T\) consist of the singular points of \(\Gamma\) together with
+the images of the singular and ramification points of \(\X^*\), where
+ramification is understood on the normalization of each source
+component. These sets are locally finite, since the singular and
+ramification loci are discrete and \(\Phi\) is proper.
 
-For each irreducible component \(\Gamma_i\) of \(\Gamma\), the
-restriction over \(\Gamma_i\setminus T\) is a finite unramified
-covering. The number of points in a fibre is consequently locally
-constant there. The regular part of an irreducible curve is connected,
-and remains connected after deletion of a locally finite set; see
-\cite[Chapter IV, Section 3, Corollary 1]{Herve}.
-Thus there is an integer \(d_i\) such that
+For each irreducible component \(\Gamma_i\) of \(\Gamma\), the map
+\[
+ \Phi^{-1}(\Gamma_i\setminus T)\longrightarrow\Gamma_i\setminus T
+\]
+is a finite covering. The regular part of an irreducible curve remains
+connected after deletion of a locally finite set; see
+\cite[Chapter IV, Section 3, Corollary 1]{Herve}. Hence there is an
+integer \(d_i\) such that
 \begin{equation}\label{eq:degree}
  \#\Phi^{-1}(s,\lambda)=d_i
  \qquad\bigl((s,\lambda)\in\Gamma_i\setminus T\bigr).
 \end{equation}
-The integer \(d_i\) counts all preimages, including those belonging
-to different components of \(\X^*\).
 
 Choose \(\eta>0\) so that the disc \(\{|z|<\eta\}\) is contained
 in both \(V\) and \(V^\#\).
@@ -407,11 +380,10 @@ Hence
  \qquad(0<|s|<\eta^2).
 \end{equation}
 
-Every irreducible component of \(\X^*\) is obtained from one of
-\(\X\) by deleting a discrete set.
-Its image under the finite proper map \(\Phi\) is an
-irreducible component of \(\Gamma\), and every component of
-\(\Gamma\) arises in this way.
+Each irreducible component of \(\X^*\) comes from an irreducible
+component of \(\X\), and its image under \(\Phi\) is an irreducible
+component of \(\Gamma\). Every component of \(\Gamma\) arises in this
+way.
 Lemma~\ref{lem:small-products} therefore shows that each \(\Gamma_i\)
 meets \(\{0<|s|<\eta^2\}\).
 This intersection is a nonempty open subset of a curve, so it is
@@ -471,11 +443,11 @@ Distinct maximum points give distinct points of this fibre.
 If \((r^2,\lambda)\notin T\), Proposition~\ref{prop:degree} gives
 \(\nu_f(r)\le2k\).
 
-The locally finite set \(T\) is countable, because \(\B\) is second
-countable. Define
+Since \(T\) is locally finite, it is countable. Define
 \[
  E=\{e^x:x\in N\}\ \cup\
-   \{\sqrt{s}:(s,\lambda)\in T,\ s\in(0,\infty)\}.
+   \{\sqrt{s}:s>0\text{ and }(s,\lambda)\in T
+      \text{ for some }\lambda\}.
 \]
 This is a countable set of positive radii, and
 \eqref{eq:main-bound} holds for every \(r\notin E\).
@@ -497,21 +469,18 @@ For \(R>1/2\), the maximum is attained precisely when
 Thus the bound in Theorem~\ref{thm:main} is sharp for every \(k\).
 \end{remark}
 
-\section*{AI tool disclosure}
+\section*{AI use disclosure}
 
-AI tools were used substantially in developing this work.
-Earlier AI-assisted explorations supplied the logarithmic-derivative
-formulation used in Section~\ref{sec:products} and the example in
-Remark~\ref{rem:sharp}.
-OpenAI's GPT-6, accessed through Codex, developed the argument in
-Section~\ref{sec:products} combining implicit-function continuation
-with growth in a direct tract, the finite-map bound in
-Section~\ref{sec:finite}, and their application to maximum modulus
-points in Section~\ref{sec:maxima}.
-GPT-6 was also used for literature retrieval, proof checking, and
-preparation of the English text and \LaTeX{} source.
-Responsibility for the mathematical content and the accuracy of the
-references rests with the author.
+Generative AI tools were used substantially during the development of
+this work. OpenAI's GPT-6, accessed through Codex, was used to develop
+parts of the proof, including the logarithmic-derivative formulation,
+the implicit-function and direct-tract argument in
+Section~\ref{sec:products}, the finite-map argument in
+Section~\ref{sec:finite}, and the sharpness example in
+Remark~\ref{rem:sharp}. It was also used for literature search, proof
+checking, and language and \LaTeX{} editing. The author reviewed and
+verified the mathematical arguments and references and takes full
+responsibility for the manuscript.
 
 \begin{thebibliography}{9}
 
@@ -556,14 +525,6 @@ The counting function for points of maximum modulus,
 in \emph{Entire Functions and Related Parts of Analysis},
 Proceedings of Symposia in Pure Mathematics, vol.~11,
 American Mathematical Society, Providence, RI, 1968, pp.~240--243.
-
-\bibitem{Julia}
-G.~Julia,
-\href{https://www.numdam.org/article/BSMF_1926__54__26_0.pdf}
-{Sur le domaine d'existence d'une fonction implicite d\'efinie par
-une relation enti\`ere \(G(x,y)=0\)},
-\emph{Bulletin de la Soci\'et\'e Math\'ematique de France}
-\textbf{54} (1926), 26--37.
 
 \bibitem{PS}
 L.~Pardo-Sim\'on and D.~J. Sixsmith,
