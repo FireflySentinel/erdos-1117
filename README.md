@@ -12,8 +12,8 @@ non-monomial entire function has $\nu_f(r)\to\infty$.
 
 | | |
 |---|---|
-| Manuscript | revised, 6 pages, 5 September 2026 — [`PROOF.pdf`](PROOF.pdf), [`PROOF.tex`](PROOF.tex) |
-| DOI | [10.5281/zenodo.22331977](https://doi.org/10.5281/zenodo.22331977) (always the latest version; v2 is [10.5281/zenodo.22332370](https://doi.org/10.5281/zenodo.22332370)) |
+| Manuscript | v4, 7 pages, 5 September 2026 — [`PROOF.pdf`](PROOF.pdf), [`PROOF.tex`](PROOF.tex) |
+| DOI | [10.5281/zenodo.22331977](https://doi.org/10.5281/zenodo.22331977) (always the latest version; this version is [10.5281/zenodo.22333117](https://doi.org/10.5281/zenodo.22333117)) |
 | erdosproblems.com | listed **open** as of 5 September 2026, no proof claims submitted |
 | Refereeing | not yet refereed |
 
@@ -59,6 +59,8 @@ $\liminf_{r\to\infty}\nu_f(r)=\infty$.
 | Herzog–Piranian (1968) | the **first** question: **yes** |
 | Pardo-Simón–Sixsmith ([arXiv:2607.09462](https://arxiv.org/abs/2607.09462), Jul 2026) | such an example can be taken of finite order, in the Eremenko–Lyubich class $\mathcal{B}$ |
 | Glücksam–Pardo-Simón ([arXiv:2208.11154](https://arxiv.org/abs/2208.11154)) | an **approximate** analogue of the second property: many separated arcs on which the modulus is close to its maximum |
+| Hayman (1951) | near the origin, the maximum modulus set consists of at most $k$ analytic curves |
+| Evdoridou–Pardo-Simón–Sixsmith ([arXiv:2012.07409](https://arxiv.org/abs/2012.07409)) | the exact number of local maximum curves outside an algebraically defined exceptional class; each contains exactly one point of each sufficiently small positive modulus, so $\nu_f(r)\le k$ for small $r$ |
 | **This preprint** | the **second** question: **no** |
 
 The bound $2k$ depends on $f$, through the order of vanishing of $zf'/f-m$ at the origin.
