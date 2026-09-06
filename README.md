@@ -47,7 +47,7 @@ All theorem names below are in the `Erdos1117` namespace.
 | Theorem 1.1 from the original entire function, conditional on the global estimate | `theorem_1_1_of_entire` | [Main](Erdos1117/Main.lean) |
 | Remark 5.1 | `sharp_maximum_card_small`, `sharp_maximum_card_large`, `sharp_logarithmicDerivative` | [SharpExample](Erdos1117/SharpExample.lean) |
 
-## AI use disclosure
+## Use of generative AI
 
 GPT-6 Astra was used to generate the mathematical proofs and draft the manuscript.
 GPT-5.6 Sol and Claude Opus 5 were used only for editorial review of the exposition and
