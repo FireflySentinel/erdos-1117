@@ -1,7 +1,7 @@
 # Lean formalization
 
 This project formalizes the local analytic and counting arguments of the
-[current manuscript](PROOF.tex), including the sharp example in Remark 5.1.
+[current manuscript](paper/PROOF.tex), including the sharp example in Remark 5.1.
 Theorem 1.1 is proved **conditional on `GlobalFibreBound`**. The global argument
 establishing that hypothesis (Lemma 3.1, Lemma 4.1, and Proposition 4.2) remains
 outside the formalization.

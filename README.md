@@ -1,68 +1,31 @@
 # Erdős Problem #1117: a bound for the number of maximum modulus points
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22331977.svg)](https://doi.org/10.5281/zenodo.22331977)
-[![Lean](https://github.com/FireflySentinel/erdos-1117/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/FireflySentinel/erdos-1117/actions/workflows/lean.yml)
-
 Preprint answering the second question of
 [Erdős Problem #1117](https://www.erdosproblems.com/1117) in the negative: no non-monomial
 entire function has $\nu_f(r)\to\infty$.
 
-**Qiyuan Gu**, University of Chicago
+[Preprint PDF](paper/PROOF.pdf) · [LaTeX source](paper/PROOF.tex) ·
+[Formalization notes](FORMALIZATION.md)
 
-[Preprint PDF](PROOF.pdf) · [LaTeX source](PROOF.tex) ·
-[Lean formalization](Erdos1117/Main.lean) · [Build instructions](FORMALIZATION.md)
+## Build and check
 
-## The problem
+With [Elan](https://github.com/leanprover/elan) installed, run from the repository root:
 
-Erdős asked whether a single non-monomial entire function can satisfy
-$\limsup_{r\to\infty}\nu_f(r)=\infty$, and whether it can satisfy
-$\liminf_{r\to\infty}\nu_f(r)=\infty$.
+```sh
+lake exe cache get
+lake build
+lake env lean checks/Check.lean
+LEAN_NUM_THREADS=2 lake env leanchecker Erdos1117
+```
 
-| | |
-|---|---|
-| Herzog–Piranian (1968) | the first question: yes |
-| Pardo-Simón–Sixsmith ([arXiv:2607.09462](https://arxiv.org/abs/2607.09462), Jul 2026) | such an example can be taken of finite order, in the Eremenko–Lyubich class $\mathcal{B}$ |
-| Glücksam–Pardo-Simón ([arXiv:2208.11154](https://arxiv.org/abs/2208.11154)) | an approximate analogue of the second property: many separated arcs on which the modulus is close to its maximum |
-| Hayman (1951) | near the origin, the maximum modulus set consists of at most $k$ analytic curves |
-| Evdoridou–Pardo-Simón–Sixsmith ([arXiv:2012.07409](https://arxiv.org/abs/2012.07409)) | the exact number of local maximum curves outside an algebraically defined exceptional class; each contains exactly one point of each sufficiently small positive modulus, so $\nu_f(r)\le k$ for small $r$ |
-| this preprint | the second question: no |
+## Exact statement
 
-The bound $2k$ depends on $f$, through the order of vanishing of $zf'/f-m$ at the origin.
-It therefore does not conflict with a family of functions whose counts grow without bound;
-it rules out a single $f$ with $\nu_f(r)\to\infty$.
+[`Erdos1117.maximum_bound_off_countable_of_global_fiber_bound`](Erdos1117/Main.lean)
+proves $\nu_f(r)\le 2k$ outside a countable set of radii, and
+`not_tendsto_atTop_of_countable_exceptions` deduces that $\nu_f(r)$ cannot tend to infinity.
 
-## Main theorem
-
-**Theorem 1.** Let $f$ be a nonzero entire function that is not a monomial, and write
-
-$$f(z)=z^m\left(c_0+c_kz^k+O(z^{k+1})\right), \qquad m\ge 0,\quad k\ge 1,\quad c_0c_k\neq 0.$$
-
-There is a countable set $E\subset(0,\infty)$ such that
-
-$$\nu_f(r)\le 2k \qquad (r\notin E).$$
-
-Consequently $\liminf_{r\to\infty}\nu_f(r)\le 2k<\infty$.
-
-Here $k$ is the difference between the degrees of the first two nonzero terms of $f$. The
-factor $2$ is attained: for $f=\exp(2z^k-z^{2k})$ there are exactly $2k$ maximum modulus
-points for all large $r$.
-
-Set $A=zf'/f$. At any radius where $\log M(r,f)$ is differentiable with respect to
-$\log r$, all maximum modulus points share the same real value of $A$, so they give points
-$(z,\bar z)$ of the complex curve $A(z)=\overline{A(\bar w)}$ with the same values of both
-$zw$ and $A(z)$. Continuation of implicit functions, together with growth in a direct tract
-(Bergweiler–Rippon–Stallard), controls the branches of that curve near the coordinate axes;
-the map $(z,w)\mapsto(zw,A(z))$ is finite and proper off a small locus, and its total fibre
-count is bounded by the local degree $k$ at each end. Convexity of $\log M$ in $\log r$
-confines the exceptional radii to a countable set.
-
-## Lean formalization
-
-The Lean project covers the local arguments in Sections 4–5: differentiation at maximum
-points, their common real logarithmic derivative, countable exceptional radii, the
-small-product fibre count, and the exact counts in Remark 5.1. The global small-product
-lemma and total fibre bound remain outside this formalization. See
-[FORMALIZATION.md](FORMALIZATION.md) for the statements and proof correspondence.
+Lemma 3.1 and Proposition 4.2 of the manuscript are not proved in Lean, so this is a
+partial formalization of Theorem 1.
 
 ## AI use disclosure
 
