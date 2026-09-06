@@ -12,8 +12,6 @@ entire function has $\nu_f(r)\to\infty$.
 
 Published version: [v5](https://doi.org/10.5281/zenodo.22545743), 6 September 2026, manuscript and Lean sources.
 
-Comments and corrections: [email](mailto:phoenix1203@uchicago.edu) or
-[issue](https://github.com/FireflySentinel/erdos-1117/issues).
 
 ## Abstract
 
@@ -87,19 +85,3 @@ did not contribute to the mathematical arguments. The author reviewed the final
 manuscript and takes full responsibility for its content.
 
 The Lean formalization was developed with OpenAI Codex (GPT-6).
-
-## Citation
-
-```bibtex
-@misc{gu2026erdos1117,
-  author       = {Qiyuan Gu},
-  title        = {A bound for the number of maximum modulus points},
-  year         = {2026},
-  doi          = {10.5281/zenodo.22331977},
-  howpublished = {Preprint, Zenodo},
-  note         = {Erd\H{o}s Problem 1117}
-}
-```
-
-Problem statement quoted from T. F. Bloom, *Erdős Problem #1117*,
-<https://www.erdosproblems.com/1117>.
