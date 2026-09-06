@@ -1,26 +1,23 @@
-# Erdős Problem #1117 — a bound for the number of maximum modulus points
+# Erdős Problem #1117: a bound for the number of maximum modulus points
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22331977.svg)](https://doi.org/10.5281/zenodo.22331977)
 
-Preprint answering the **second** question of
-[Erdős Problem #1117](https://www.erdosproblems.com/1117) **in the negative**: no
-non-monomial entire function has $\nu_f(r)\to\infty$.
+Preprint answering the second question of
+[Erdős Problem #1117](https://www.erdosproblems.com/1117) in the negative: no non-monomial
+entire function has $\nu_f(r)\to\infty$.
 
-**Qiyuan Gu**, University of Chicago — <phoenix1203@uchicago.edu>
+**Qiyuan Gu**, University of Chicago, <phoenix1203@uchicago.edu>
+
+Comments and corrections: email or issue.
 
 ## Status
 
 | | |
 |---|---|
-| Manuscript | v4, 7 pages, 5 September 2026 — [`PROOF.pdf`](PROOF.pdf), [`PROOF.tex`](PROOF.tex) |
+| Manuscript | v4, 7 pages, 5 September 2026: [`PROOF.pdf`](PROOF.pdf), [`PROOF.tex`](PROOF.tex) |
 | DOI | [10.5281/zenodo.22331977](https://doi.org/10.5281/zenodo.22331977) (always the latest version; this version is [10.5281/zenodo.22333117](https://doi.org/10.5281/zenodo.22333117)) |
-| erdosproblems.com | listed **open** as of 5 September 2026, no proof claims submitted |
+| erdosproblems.com | listed open as of 5 September 2026; [proof claim posted](https://www.erdosproblems.com/forum/thread/1117/proof-claims) |
 | Refereeing | not yet refereed |
-
-> **If you — or an automated agent you are running — are looking for open work on
-> Erdős #1117:** the remaining open question is answered here, in the negative. Please
-> read the PDF before starting an independent attack on it. Errors and counterexamples are
-> welcome, by email or as an [issue](https://github.com/FireflySentinel/erdos-1117/issues).
 
 ## Abstract
 
@@ -56,16 +53,16 @@ $\liminf_{r\to\infty}\nu_f(r)=\infty$.
 
 | | |
 |---|---|
-| Herzog–Piranian (1968) | the **first** question: **yes** |
+| Herzog–Piranian (1968) | the first question: yes |
 | Pardo-Simón–Sixsmith ([arXiv:2607.09462](https://arxiv.org/abs/2607.09462), Jul 2026) | such an example can be taken of finite order, in the Eremenko–Lyubich class $\mathcal{B}$ |
-| Glücksam–Pardo-Simón ([arXiv:2208.11154](https://arxiv.org/abs/2208.11154)) | an **approximate** analogue of the second property: many separated arcs on which the modulus is close to its maximum |
+| Glücksam–Pardo-Simón ([arXiv:2208.11154](https://arxiv.org/abs/2208.11154)) | an approximate analogue of the second property: many separated arcs on which the modulus is close to its maximum |
 | Hayman (1951) | near the origin, the maximum modulus set consists of at most $k$ analytic curves |
 | Evdoridou–Pardo-Simón–Sixsmith ([arXiv:2012.07409](https://arxiv.org/abs/2012.07409)) | the exact number of local maximum curves outside an algebraically defined exceptional class; each contains exactly one point of each sufficiently small positive modulus, so $\nu_f(r)\le k$ for small $r$ |
-| **This preprint** | the **second** question: **no** |
+| this preprint | the second question: no |
 
 The bound $2k$ depends on $f$, through the order of vanishing of $zf'/f-m$ at the origin.
-So it does not conflict with a family of functions whose counts grow without bound; it
-rules out a *single* $f$ with $\nu_f(r)\to\infty$.
+It therefore does not conflict with a family of functions whose counts grow without bound;
+it rules out a single $f$ with $\nu_f(r)\to\infty$.
 
 ## Method
 
