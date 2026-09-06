@@ -1,6 +1,7 @@
 # Erdős Problem #1117: a bound for the number of maximum modulus points
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22331977.svg)](https://doi.org/10.5281/zenodo.22331977)
+[![Lean](https://github.com/FireflySentinel/erdos-1117/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/FireflySentinel/erdos-1117/actions/workflows/lean.yml)
 
 Preprint answering the second question of
 [Erdős Problem #1117](https://www.erdosproblems.com/1117) in the negative: no non-monomial
@@ -8,37 +9,8 @@ entire function has $\nu_f(r)\to\infty$.
 
 **Qiyuan Gu**, University of Chicago
 
-[Preprint PDF](PROOF.pdf) · [LaTeX source](PROOF.tex) · [Lean formalization](FORMALIZATION.md)
-
-Published version: [v5](https://doi.org/10.5281/zenodo.22545743), 6 September 2026, manuscript and Lean sources.
-The repository includes subsequent formalization and exposition updates.
-
-
-## Abstract
-
-For a non-monomial entire function $f$, let $\nu_f(r)$ be the number of points on $|z|=r$
-at which $|f|$ attains its maximum. Write $f(z)=z^m(c_0+c_kz^k+O(z^{k+1}))$, where
-$c_0c_k\neq 0$ and $k\ge 1$. We prove that $\nu_f(r)\le 2k$ outside a countable set of
-radii. In particular, $\nu_f(r)$ cannot tend to infinity, answering the second question of
-Erdős on maximum modulus points. The proof studies the correspondence
-$A(z)=\overline{A(\bar w)}$, where $A=zf'/f$, using implicit-function continuation, growth
-in a direct tract, and a finite proper map of analytic curves.
-
-## Main theorem
-
-**Theorem 1.** Let $f$ be a nonzero entire function that is not a monomial, and write
-
-$$f(z)=z^m\left(c_0+c_kz^k+O(z^{k+1})\right), \qquad m\ge 0,\quad k\ge 1,\quad c_0c_k\neq 0.$$
-
-There is a countable set $E\subset(0,\infty)$ such that
-
-$$\nu_f(r)\le 2k \qquad (r\notin E).$$
-
-Consequently $\liminf_{r\to\infty}\nu_f(r)\le 2k<\infty$.
-
-Here $k$ is the difference between the degrees of the first two nonzero terms of $f$. The
-factor $2$ is attained: for $f=\exp(2z^k-z^{2k})$ there are exactly $2k$ maximum modulus
-points for all large $r$.
+[Preprint PDF](PROOF.pdf) · [LaTeX source](PROOF.tex) ·
+[Lean formalization](Erdos1117/Main.lean) · [Build instructions](FORMALIZATION.md)
 
 ## The problem
 
@@ -56,11 +28,24 @@ $\liminf_{r\to\infty}\nu_f(r)=\infty$.
 | this preprint | the second question: no |
 
 The bound $2k$ depends on $f$, through the order of vanishing of $zf'/f-m$ at the origin.
-Unbounded upper limits for a single function remain possible on exceptional radii;
-the theorem rules out $\nu_f(r)\to\infty$. The approximate result counts separated
-arcs near the maximum, rather than points attaining the maximum exactly.
+It therefore does not conflict with a family of functions whose counts grow without bound;
+it rules out a single $f$ with $\nu_f(r)\to\infty$.
 
-## Method
+## Main theorem
+
+**Theorem 1.** Let $f$ be a nonzero entire function that is not a monomial, and write
+
+$$f(z)=z^m\left(c_0+c_kz^k+O(z^{k+1})\right), \qquad m\ge 0,\quad k\ge 1,\quad c_0c_k\neq 0.$$
+
+There is a countable set $E\subset(0,\infty)$ such that
+
+$$\nu_f(r)\le 2k \qquad (r\notin E).$$
+
+Consequently $\liminf_{r\to\infty}\nu_f(r)\le 2k<\infty$.
+
+Here $k$ is the difference between the degrees of the first two nonzero terms of $f$. The
+factor $2$ is attained: for $f=\exp(2z^k-z^{2k})$ there are exactly $2k$ maximum modulus
+points for all large $r$.
 
 Set $A=zf'/f$. At any radius where $\log M(r,f)$ is differentiable with respect to
 $\log r$, all maximum modulus points share the same real value of $A$, so they give points
@@ -73,16 +58,11 @@ confines the exceptional radii to a countable set.
 
 ## Lean formalization
 
-Lean proves Theorem 1.1 **conditional on `GlobalFibreBound`**, the global fibre
-estimate from Sections 3–4. The top-level theorem starts from a nonzero entire
-function that is not a monomial, extracts its zero order and Taylor gap, and
-bounds the extended cardinality of its maximum-point set outside a countable set.
-
-The verified local arguments include the entire factorization, local power
-coordinates, differentiation at maximum points, the common real logarithmic
-derivative, countable exceptional radii, the small-product fibre count for the
-actual logarithmic derivative, and the exact counts in Remark 5.1.
-[FORMALIZATION.md](FORMALIZATION.md) gives the statements and remaining global obligation.
+The Lean project covers the local arguments in Sections 4–5: differentiation at maximum
+points, their common real logarithmic derivative, countable exceptional radii, the
+small-product fibre count, and the exact counts in Remark 5.1. The global small-product
+lemma and total fibre bound remain outside this formalization. See
+[FORMALIZATION.md](FORMALIZATION.md) for the statements and proof correspondence.
 
 ## AI use disclosure
 
