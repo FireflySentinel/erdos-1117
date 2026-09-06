@@ -4,8 +4,6 @@ Preprint answering the second question of
 [Erdős Problem #1117](https://www.erdosproblems.com/1117) in the negative: no non-monomial
 entire function has $\nu_f(r)\to\infty$.
 
-[Preprint PDF](paper/PROOF.pdf) · [LaTeX source](paper/PROOF.tex)
-
 ## Build and check
 
 With [Elan](https://github.com/leanprover/elan) installed, run from the repository root:
