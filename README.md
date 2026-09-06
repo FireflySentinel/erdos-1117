@@ -8,7 +8,7 @@ entire function has $\nu_f(r)\to\infty$.
 
 **Qiyuan Gu**, University of Chicago
 
-[Preprint PDF](PROOF.pdf) · [LaTeX source](PROOF.tex)
+[Preprint PDF](PROOF.pdf) · [LaTeX source](PROOF.tex) · [Lean formalization](FORMALIZATION.md)
 
 Published version: [v4](https://doi.org/10.5281/zenodo.22333117), 5 September 2026.
 
@@ -71,14 +71,22 @@ the map $(z,w)\mapsto(zw,A(z))$ is finite and proper off a small locus, and its 
 count is bounded by the local degree $k$ at each end. Convexity of $\log M$ in $\log r$
 confines the exceptional radii to a countable set.
 
+## Lean formalization
+
+The Lean project covers the local arguments in Sections 4–5: differentiation at maximum
+points, their common real logarithmic derivative, countable exceptional radii, the
+small-product fibre count, and the exact counts in Remark 5.1. The global small-product
+lemma and total fibre bound remain outside this formalization. See
+[FORMALIZATION.md](FORMALIZATION.md) for the statements and proof correspondence.
+
 ## AI use disclosure
 
-Generative AI tools were used substantially during the development of this work. OpenAI's
-GPT-6, accessed through Codex, was used to develop parts of the proof, including the
-logarithmic-derivative formulation, the implicit-function and direct-tract argument, the
-finite-map argument, and the sharpness example. It was also used for literature search,
-proof checking, and language and LaTeX editing. The author reviewed and verified the
-mathematical arguments and references and takes full responsibility for the manuscript.
+GPT-6 Astra was used to generate the mathematical proofs and draft the manuscript.
+GPT-5.6 Sol and Claude Opus 5 were used only for editorial review of the exposition and
+did not contribute to the mathematical arguments. The author reviewed the final
+manuscript and takes full responsibility for its content.
+
+The Lean formalization was developed with OpenAI Codex (GPT-6).
 
 ## Citation
 
