@@ -6,18 +6,14 @@ Preprint answering the second question of
 [Erdős Problem #1117](https://www.erdosproblems.com/1117) in the negative: no non-monomial
 entire function has $\nu_f(r)\to\infty$.
 
-**Qiyuan Gu**, University of Chicago, <phoenix1203@uchicago.edu>
+**Qiyuan Gu**, University of Chicago
 
-Comments and corrections: email or issue.
+[Preprint PDF](PROOF.pdf) · [LaTeX source](PROOF.tex)
 
-## Status
+Published version: [v4](https://doi.org/10.5281/zenodo.22333117), 5 September 2026.
 
-| | |
-|---|---|
-| Manuscript | v4, 7 pages, 5 September 2026: [`PROOF.pdf`](PROOF.pdf), [`PROOF.tex`](PROOF.tex) |
-| DOI | [10.5281/zenodo.22331977](https://doi.org/10.5281/zenodo.22331977) (always the latest version; this version is [10.5281/zenodo.22333117](https://doi.org/10.5281/zenodo.22333117)) |
-| erdosproblems.com | listed open as of 5 September 2026; [proof claim posted](https://www.erdosproblems.com/forum/thread/1117/proof-claims) |
-| Refereeing | not yet refereed |
+Comments and corrections: [email](mailto:phoenix1203@uchicago.edu) or
+[issue](https://github.com/FireflySentinel/erdos-1117/issues).
 
 ## Abstract
 
