@@ -7,7 +7,7 @@
 \usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
-  pdftitle={A bound for the number of maximum modulus points},
+  pdftitle={A negative answer to a question of Erdős on maximum modulus points},
   pdfauthor={Qiyuan Gu}
 }
 
@@ -23,7 +23,7 @@
 \newcommand{\X}{\mathcal X}
 \newcommand{\B}{\mathcal B}
 
-\title{A bound for the number of maximum modulus points}
+\title{A negative answer to a question of Erd\H{o}s\\on maximum modulus points}
 \author{Qiyuan Gu\\
 University of Chicago\\
 \href{mailto:phoenix1203@uchicago.edu}{\texttt{phoenix1203@uchicago.edu}}}
@@ -55,28 +55,39 @@ For a nonzero entire function \(f\), put
  \nu_f(r)=\#\{z:|z|=r,\ |f(z)|=M(r,f)\}.
 \]
 If \(f\) is not a monomial, then \(\nu_f(r)\) is finite for every
-\(r>0\). Erd\H{o}s asked whether a single such function can satisfy
+\(r>0\).\footnote{If \(|f|=c>0\) on an arc of \(|z|=r\), the identity
+ theorem gives \(f(z)f^\#(r^2/z)=c^2\) on \(\C^*\), where
+ \(f^\#(z)=\overline{f(\overline z)}\). Writing \(f=z^m h\),
+ \(h(0)\ne0\), and letting \(z\to\infty\) gives
+ \(f(z)=O(|z|^m)\). Thus \(f\) is a polynomial of degree at most
+ \(m\), hence a monomial. For non-monomial \(f\), the real-analytic
+ function \(\theta\mapsto|f(re^{i\theta})|^2\) has a discrete maximum
+ set on the compact circle, hence finitely many maximum points.}
+Erd\H{o}s asked whether a single such function can satisfy
 \[
  \limsup_{r\to\infty}\nu_f(r)=\infty,
  \qquad\text{and whether it can satisfy}\qquad
  \liminf_{r\to\infty}\nu_f(r)=\infty;
 \]
 see \cite{Erdos1117,GP} for the problem and its history.
-Herzog and Piranian \cite{HP} answered the first question affirmatively.
+Herzog and Piranian \cite{HP} answered the first question affirmatively;
+see also the account in \cite{GP}.
 Pardo-Sim\'on and Sixsmith \cite{PS} obtained such an example of finite
 order. Gl\"ucksam and Pardo-Sim\'on \cite{GP} constructed an approximate
 analogue of the second property, with many separated arcs on which
 the modulus is close to its maximum.
 
-There is also a classical local theory near the origin. Hayman
-\cite{Hayman} proved that for \(f\) as in \eqref{eq:taylor}, the
-maximum modulus set near zero consists of at most \(k\) analytic
-curves. Evdoridou, Pardo-Sim\'on, and Sixsmith \cite{EPS} refined
-this description, determining the exact number of local maximum
-curves outside an algebraically defined exceptional class and showing
-that each such curve contains exactly one point of each sufficiently
-small positive modulus. In particular, \(\nu_f(r)\le k\) for all
-sufficiently small \(r\).
+There is also a classical local theory near the origin. Dividing \(f\)
+in \eqref{eq:taylor} by \(c_0z^m\) leaves its maximum modulus points
+unchanged and gives the normalization \(1+az^k+O(z^{k+1})\) used by
+Hayman \cite{Hayman} and Evdoridou, Pardo-Sim\'on, and Sixsmith
+\cite{EPS}. Hayman's local curve bound is recalled in
+\cite[Theorem A]{EPS}; their Theorem~1.4 describes at most \(k\)
+curves, each meeting every sufficiently small circle exactly once.
+It follows that \(\nu_f(r)\le k\) for all sufficiently small \(r>0\).
+Theorem~\ref{thm:main} is a global counterpart of this local bound:
+the same \(k\) controls the count at all but countably many radii.
+The unbounded upper limits in \cite{HP,PS} occur on the exceptional radii.
 
 We prove that the answer to the second question is negative.
 
@@ -100,14 +111,6 @@ The integer \(k\) is the difference between the degrees of the first
 two nonzero terms of \(f\). The factor \(2\) is attained by an explicit
 example given in Remark~\ref{rem:sharp}.
 
-
-The countable-exception bound allows the unbounded upper limits constructed
-in \cite{HP,PS}: their large counts may occur on the exceptional radii.
-The separated arcs in \cite{GP} concern values close to the maximum, so they
-need not produce additional points attaining it. The local bound \(k\)
-near the origin from \cite{Hayman,EPS} is also consistent with the bound
-\(2k\) for nonexceptional radii here.
-
 Set \(A=zf'/f\). At radii where \(\log M(r,f)\) is differentiable
 with respect to \(\log r\), all maximum modulus points have the same
 real value of \(A\). Hence they determine points \((z,\overline z)\)
@@ -119,7 +122,7 @@ of the resulting finite proper map have size at most \(2k\).
 
 \section{Analytic preliminaries}\label{sec:facts}
 
-\begin{lemma}[Sto\"ilow; see \cite{Eremenko}]\label{lem:continuation}
+\begin{lemma}[Sto\"ilow \cite{Stoilow}; see also \cite{Eremenko}]\label{lem:continuation}
 Let \(F\) be entire on \(\C^2\), and suppose that
 \[
  F(a,b)=0,\qquad F_w(a,b)\ne0.
@@ -228,12 +231,17 @@ Every irreducible component \(X\) of \(\X\) contains a sequence
 \begin{proof}
 Choose a regular point of \(X\) at which \(F_w\ne0\) and apply
 Lemma~\ref{lem:continuation} to the corresponding implicit germ.
+The continued graph stays in \(X\) by the identity theorem on its
+connected Riemann surface of analytic continuation.
 Since its projection is dense, the continuation reaches a point
 \((z_0,w_0)\in X\) with
 \[
  z_0\in V\setminus\{0\},\qquad
  0<|A(z_0)-m|<\delta.
 \]
+The value \(B(w_0)=A(z_0)\) is finite: since \(q(z_0)\ne0\),
+\(F(z_0,w_0)=0\) and the absence of common zeros of \(p^\#,q^\#\)
+exclude a pole at \(w_0\).
 Let \(U\) be the connected component of \(\{|B-m|<\delta\}\)
 containing \(w_0\).
 In \(V\times U\), consider the analytic curve
@@ -245,9 +253,10 @@ subset of \(U\), the right-hand side remains in a compact subset of
 \(\{\xi:|\xi|<\delta\}\), so all its \(k\)-th roots remain in a
 compact subset of the coordinate disc.
 
-Since \(A'(z_0)\ne0\), the curve \eqref{eq:root-relation} is smooth
-at \((z_0,w_0)\). Let \(Y\) be its irreducible component through this
-point. Near \((z_0,w_0)\), it is the same branch as \(X\), hence
+Since \(A-m=\chi^k\), with \(\chi(z_0)\ne0\) and
+\(\chi'(z_0)\ne0\), we have \(A'(z_0)\ne0\). Thus the curve
+\eqref{eq:root-relation} is smooth at \((z_0,w_0)\). Let \(Y\) be its
+irreducible component through this point. Near \((z_0,w_0)\), it is the same branch as \(X\), hence
 \(Y\subset X\) by the identity theorem for analytic sets. The
 projection \(Y\to U\) is finite, proper, and nonconstant. Its image is
 therefore both open and closed in \(U\), so the projection is
@@ -272,25 +281,15 @@ and satisfies
 \]
 The maximum principle shows that \(U\) is unbounded.
 
-We claim that its complement is also unbounded.
-If \(f\) has a zero other than the origin, then for every sufficiently
-large \(R\) whose circle avoids the zeros of \(f\), the argument
-principle gives
-\begin{equation}\label{eq:mean}
- \frac1{2\pi}\int_0^{2\pi}
- \bigl(B(Re^{i\theta})-m\bigr)\,d\theta
- =n(R,f)-m\ge1,
-\end{equation}
-where \(n(R,f)\) counts zeros in \(|z|<R\), with multiplicity.
-Here \(B(w)=w(f^\#)'(w)/f^\#(w)\), and \(f\) and \(f^\#\) have
-the same zero counts on centred discs.
-Since \(\delta<1\), such a circle cannot be contained in
-\(\{|B-m|<\delta\}\). A circle containing a pole of \(B\) is not
-contained in that set either.
-If \(f\) has no zero other than possibly the origin, then \(B-m\)
-is a nonconstant entire function. Its maximum modulus eventually
-exceeds \(\delta\), giving the same conclusion for all large circles.
-In either case, \(\C\setminus U\) is unbounded.
+We claim that \(\C\setminus U\) is unbounded. Otherwise \(U\)
+contains a neighbourhood of infinity, on which \(|B-m|<\delta<1\).
+Thus \(B\) is meromorphic on \(\C\) and holomorphic and bounded near
+infinity, hence rational; so is \(A=B^\#\).
+Since \(f'/f=A/z\) is rational, factoring out the finitely many zeros
+of \(f\) gives \(f=Pe^R\) for polynomials \(P,R\). Therefore
+\(A=zP'/P+zR'\). Boundedness at infinity forces \(R\) to be constant,
+so \(A\to\deg P\); the bound \(|A-m|<\delta<1\) gives \(\deg P=m\).
+Since \(z^m\) divides \(P\), \(f\) is a monomial, a contradiction.
 
 Consequently, \(U\) is a direct tract of \(Q\) with boundary value
 one. Define \(u=\log|Q|\) in \(U\), and \(u=0\) outside \(U\).
@@ -321,7 +320,9 @@ Remove the zero coordinates, poles, and common value \(m\), and set
  \B&=\C^*\times(\C\setminus\{m\}).
 \end{align*}
 On each irreducible component of \(\X\), the deleted locus is
-discrete. Thus every irreducible component of \(\X^*\) is obtained
+discrete: the absence of horizontal or vertical components ensures that
+none is contained in \(zw=0\), \(A(z)=m\), or the pole loci.
+Thus every irreducible component of \(\X^*\) is obtained
 from one of \(\X\) by deleting a discrete set.
 Consider the holomorphic map
 \begin{equation}\label{eq:Phi}
@@ -361,7 +362,8 @@ There is a locally finite set \(T\subset\Gamma\) such that
 \end{proposition}
 
 \begin{proof}
-By Remmert's proper mapping theorem and Lemma~\ref{lem:proper},
+By Remmert's proper mapping theorem
+\cite[Chapter II, Theorem 8.8, p.~118]{Demailly} and Lemma~\ref{lem:proper},
 \(\Gamma\) is a closed analytic curve.
 Let \(T\) consist of the singular points of \(\Gamma\) together with
 the images of the singular and ramification points of \(\X^*\), where
@@ -374,8 +376,11 @@ For each irreducible component \(\Gamma_i\) of \(\Gamma\), the map
 \[
  \Phi^{-1}(\Gamma_i\setminus T)\longrightarrow\Gamma_i\setminus T
 \]
-is a finite covering. The normalization of \(\Gamma_i\) is a connected
-Riemann surface, and deleting a locally finite set leaves it connected.
+is proper and, off \(T\), a local biholomorphism, hence a finite covering.
+Points of \(\Gamma_i\setminus T\) lie on no other component of
+\(\Gamma\), since intersections of components are singular.
+The normalization of \(\Gamma_i\) is a connected Riemann surface,
+and deleting a locally finite set leaves it connected.
 Since \(T\) contains the singular points of \(\Gamma\), it follows that
 \(\Gamma_i\setminus T\) is connected. Hence there is an integer
 \(d_i\) such that
@@ -452,7 +457,9 @@ For any \(t<x\), the convex secant-slope inequality gives
 \]
 Hence \(\lambda=m+b'(x)>m\).
 
-For every maximum modulus point \(z\) on \(|z|=r\), we now have
+For every maximum modulus point \(z\) on \(|z|=r\), reality of
+\(\lambda\) gives \(B(\overline z)=\overline{A(z)}=\lambda\).
+Since \(\lambda\ne m\) and \(r^2\ne0\), we obtain
 \begin{equation}\label{eq:maximal-fibre}
  (z,\overline z)\in\X^*,
  \qquad\Phi(z,\overline z)=(r^2,\lambda).
@@ -491,13 +498,17 @@ is sharp for every \(k\).
 
 \section*{Use of generative AI}
 
-GPT-6 Astra was used to generate the mathematical proofs and draft the
-manuscript. GPT-5.6 Sol and Claude Opus 5 were used only for editorial
-review of the exposition and did not contribute to the mathematical
-arguments. The author reviewed the final manuscript and takes full
-responsibility for its content.
+The proofs were generated with GPT-6 (Codex) and checked step by step
+by the author. The arguments of Section~\ref{sec:maxima}, the local
+fibre count \eqref{eq:small-fibre}, and Remark~\ref{rem:sharp} are
+formalized in Lean 4 with Mathlib at
+\url{https://github.com/FireflySentinel/erdos-1117}.
+Lemma~\ref{lem:small-products}, Lemma~\ref{lem:proper}, and
+Proposition~\ref{prop:degree} are not formalized; their global fibre
+estimate enters the final Lean theorem as the hypothesis
+\texttt{GlobalFibreBound}.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{10}
 
 \bibitem{BRS}
 W.~Bergweiler, P.~J. Rippon, and G.~M. Stallard,
@@ -506,6 +517,13 @@ singularities,
 \emph{Proceedings of the London Mathematical Society} (3)
 \textbf{97} (2008), 368--400.
 \href{https://arxiv.org/abs/0704.2712}{arXiv:0704.2712}.
+
+\bibitem{Demailly}
+J.-P. Demailly,
+\emph{Complex Analytic and Differential Geometry},
+version of 21 June 2012.
+\href{https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf}
+{Author's online text}.
 
 \bibitem{Erdos1117}
 T.~F. Bloom,
@@ -537,6 +555,7 @@ An approximate solution to Erdos' maximum modulus points problem,
 W.~K. Hayman,
 A characterization of the maximum modulus of functions regular at the origin,
 \emph{Journal d'Analyse Math\'ematique} \textbf{1} (1951), 135--154.
+\href{https://doi.org/10.1007/BF02790086}{doi:10.1007/BF02790086}.
 
 \bibitem{HP}
 F.~Herzog and G.~Piranian,
@@ -551,6 +570,12 @@ L.~Pardo-Sim\'on and D.~J. Sixsmith,
 modulus points},
 preprint, 2026.
 \href{https://arxiv.org/abs/2607.09462}{arXiv:2607.09462}.
+
+\bibitem{Stoilow}
+S.~Sto\"ilow,
+Sur les fonctions analytiques dont les surfaces de Riemann ont des
+fronti\`eres totalement discontinues,
+\emph{Mathematica (Cluj)} \textbf{12} (1936), 123--138.
 
 \end{thebibliography}
 
