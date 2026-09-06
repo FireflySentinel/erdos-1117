@@ -27,3 +27,19 @@ import Erdos1117
 /-- info: 'Erdos1117.not_tendsto_atTop_of_countable_exceptions' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms Erdos1117.not_tendsto_atTop_of_countable_exceptions
+
+/-- info: 'Erdos1117.theorem_1_1_of_global' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.theorem_1_1_of_global
+
+/-- info: 'Erdos1117.theorem_1_1_of_entire' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.theorem_1_1_of_entire
+
+/-- info: 'Erdos1117.exists_local_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.exists_local_coordinate
+
+/-- info: 'Erdos1117.small_product_fiber_bound_of_order' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.small_product_fiber_bound_of_order

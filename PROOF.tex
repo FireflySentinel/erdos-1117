@@ -100,6 +100,14 @@ The integer \(k\) is the difference between the degrees of the first
 two nonzero terms of \(f\). The factor \(2\) is attained by an explicit
 example given in Remark~\ref{rem:sharp}.
 
+
+The countable-exception bound allows the unbounded upper limits constructed
+in \cite{HP,PS}: their large counts may occur on the exceptional radii.
+The separated arcs in \cite{GP} concern values close to the maximum, so they
+need not produce additional points attaining it. The local bound \(k\)
+near the origin from \cite{Hayman,EPS} is also consistent with the bound
+\(2k\) for nonexceptional radii here.
+
 Set \(A=zf'/f\). At radii where \(\log M(r,f)\) is differentiable
 with respect to \(\log r\), all maximum modulus points have the same
 real value of \(A\). Hence they determine points \((z,\overline z)\)
@@ -436,15 +444,13 @@ To see this, write
 \[
  b(x)=v(x)-mx=\log M(e^x,h).
 \]
-The function \(b\) is convex and nondecreasing.
-Since \(h\) is nonconstant, the maximum principle gives
+The function \(b\) is convex and strictly increasing, since the maximum
+modulus of a nonconstant entire function strictly increases with radius.
+For any \(t<x\), the convex secant-slope inequality gives
 \[
- b(x)>\log|h(0)|=\lim_{t\to-\infty}b(t)
- \qquad(x\in\R).
+ 0<\frac{b(x)-b(t)}{x-t}\le b'(x).
 \]
-If \(b'(x)=0\) at a differentiability point, convexity and
-monotonicity would force \(b\) to be constant on \(( -\infty,x]\),
-a contradiction. Hence \(\lambda=m+b'(x)>m\).
+Hence \(\lambda=m+b'(x)>m\).
 
 For every maximum modulus point \(z\) on \(|z|=r\), we now have
 \begin{equation}\label{eq:maximal-fibre}

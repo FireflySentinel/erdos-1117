@@ -19,13 +19,13 @@ theorem small_coordinate {z w : ℂ} {η : ℝ} (hη : 0 < η)
 /-- The two endpoint counts bound the entire fibre, without a prior finiteness assumption. -/
 theorem small_product_fiber_bound {A B : ℂ → ℂ} {s a : ℂ} {η : ℝ} {k : ℕ}
     (hη : 0 < η) (hs : s ≠ 0) (hsmall : ‖s‖ < η ^ 2)
-    (hA : {z : ℂ | ‖z‖ < η ∧ A z = a}.Finite)
-    (hB : {w : ℂ | ‖w‖ < η ∧ B w = a}.Finite)
-    (hAc : {z : ℂ | ‖z‖ < η ∧ A z = a}.ncard ≤ k)
-    (hBc : {w : ℂ | ‖w‖ < η ∧ B w = a}.ncard ≤ k) :
+    (hA : {z : ℂ | (0 < ‖z‖ ∧ ‖z‖ < η) ∧ A z = a}.Finite)
+    (hB : {w : ℂ | (0 < ‖w‖ ∧ ‖w‖ < η) ∧ B w = a}.Finite)
+    (hAc : {z : ℂ | (0 < ‖z‖ ∧ ‖z‖ < η) ∧ A z = a}.ncard ≤ k)
+    (hBc : {w : ℂ | (0 < ‖w‖ ∧ ‖w‖ < η) ∧ B w = a}.ncard ≤ k) :
     (productFiber A B s a).Finite ∧ (productFiber A B s a).ncard ≤ 2 * k := by
-  let L := (fun z : ℂ => (z, s / z)) '' {z : ℂ | ‖z‖ < η ∧ A z = a}
-  let R := (fun w : ℂ => (s / w, w)) '' {w : ℂ | ‖w‖ < η ∧ B w = a}
+  let L := (fun z : ℂ => (z, s / z)) '' {z : ℂ | (0 < ‖z‖ ∧ ‖z‖ < η) ∧ A z = a}
+  let R := (fun w : ℂ => (s / w, w)) '' {w : ℂ | (0 < ‖w‖ ∧ ‖w‖ < η) ∧ B w = a}
   have hL : L.Finite := hA.image _
   have hR : R.Finite := hB.image _
   have hsub : productFiber A B s a ⊆ L ∪ R := by
@@ -34,11 +34,11 @@ theorem small_product_fiber_bound {A B : ℂ → ℂ} {s a : ℂ} {η : ℝ} {k 
     have hw : w ≠ 0 := by intro hw; simp [hw] at heq; exact hs heq.symm
     rcases small_coordinate hη (by rwa [heq]) with hlocal | hlocal
     · left
-      refine ⟨z, ⟨hlocal, hza⟩, ?_⟩
+      refine ⟨z, ⟨⟨norm_pos_iff.mpr hz, hlocal⟩, hza⟩, ?_⟩
       simp only [Prod.mk.injEq, true_and]
       rw [← heq, mul_div_cancel_left₀ _ hz]
     · right
-      refine ⟨w, ⟨hlocal, hwa⟩, ?_⟩
+      refine ⟨w, ⟨⟨norm_pos_iff.mpr hw, hlocal⟩, hwa⟩, ?_⟩
       simp only [Prod.mk.injEq, and_true]
       rw [← heq, mul_div_cancel_right₀ _ hw]
   refine ⟨(hL.union hR).subset hsub, ?_⟩
@@ -52,9 +52,9 @@ theorem small_product_fiber_bound {A B : ℂ → ℂ} {s a : ℂ} {η : ℝ} {k 
 theorem small_product_fiber_bound_of_coordinates {A B χ ψ : ℂ → ℂ} {s a m : ℂ}
     {η : ℝ} {k : ℕ} (hk : 0 < k) (hη : 0 < η) (hs : s ≠ 0)
     (hsmall : ‖s‖ < η ^ 2)
-    (hχ : InjOn χ {z : ℂ | ‖z‖ < η}) (hψ : InjOn ψ {z : ℂ | ‖z‖ < η})
-    (hA : ∀ z : ℂ, ‖z‖ < η → A z - m = χ z ^ k)
-    (hB : ∀ z : ℂ, ‖z‖ < η → B z - m = ψ z ^ k) :
+    (hχ : InjOn χ {z : ℂ | 0 < ‖z‖ ∧ ‖z‖ < η}) (hψ : InjOn ψ {z : ℂ | 0 < ‖z‖ ∧ ‖z‖ < η})
+    (hA : ∀ z : ℂ, (0 < ‖z‖ ∧ ‖z‖ < η) → A z - m = χ z ^ k)
+    (hB : ∀ z : ℂ, (0 < ‖z‖ ∧ ‖z‖ < η) → B z - m = ψ z ^ k) :
     (productFiber A B s a).Finite ∧ (productFiber A B s a).ncard ≤ 2 * k := by
   have ha := coordinate_fiber_bound hk hχ hA a
   have hb := coordinate_fiber_bound hk hψ hB a

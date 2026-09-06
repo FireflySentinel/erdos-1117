@@ -4,6 +4,7 @@ open Complex Filter Topology
 
 namespace Erdos1117
 
+/-- The quotient `zf'/f`, used at points where `f z ≠ 0`. -/
 noncomputable def logarithmicDerivative (f : ℂ → ℂ) (z : ℂ) : ℂ :=
   z * deriv f z / f z
 

@@ -11,29 +11,6 @@ theorem countable_of_locally_finite_points {T : Set (ℂ × ℂ)}
   have : Countable T := Set.countable_univ_iff.mp hu
   exact Set.to_countable T
 
-def exceptionalRadii (v : ℝ → ℝ) (T : Set (ℂ × ℂ)) : Set ℝ :=
-  Real.exp '' {x | ¬ DifferentiableAt ℝ v x} ∪
-    (fun p : ℂ × ℂ => Real.sqrt p.1.re) '' T
-
-theorem exceptionalRadii_countable {v : ℝ → ℝ} {T : Set (ℂ × ℂ)}
-    (hv : ConvexOn ℝ univ v) (hT : T.Countable) : (exceptionalRadii v T).Countable :=
-  ((convex_countable_nondifferentiable hv).image Real.exp).union (hT.image _)
-
-theorem differentiable_off_exceptionalRadii {v : ℝ → ℝ} {T : Set (ℂ × ℂ)}
-    {r : ℝ} (hr : 0 < r) (hne : r ∉ exceptionalRadii v T) :
-    DifferentiableAt ℝ v (Real.log r) := by
-  by_contra h
-  apply hne
-  exact Or.inl ⟨Real.log r, h, Real.exp_log hr⟩
-
-theorem fibre_value_off_exceptionalRadii {v : ℝ → ℝ} {T : Set (ℂ × ℂ)}
-    {r : ℝ} (hr : 0 ≤ r) (hne : r ∉ exceptionalRadii v T) (a : ℂ) :
-    (((r ^ 2 : ℝ) : ℂ), a) ∉ T := by
-  intro h
-  apply hne
-  right
-  exact ⟨(((r ^ 2 : ℝ) : ℂ), a), h, by change Real.sqrt (r ^ 2) = r; exact Real.sqrt_sq hr⟩
-
 /-- Countably many exceptional radii cannot contain any tail interval. -/
 theorem exists_large_nonexceptional {E : Set ℝ} (hE : E.Countable) (R : ℝ) :
     ∃ r : ℝ, R < r ∧ 0 < r ∧ r ∉ E := by
@@ -41,7 +18,8 @@ theorem exists_large_nonexceptional {E : Set ℝ} (hE : E.Countable) (R : ℝ) :
     (Ioi (max R 0)) isOpen_Ioi nonempty_Ioi
   exact ⟨r, (le_max_left _ _).trans_lt hr, (le_max_right _ _).trans_lt hr, hnot⟩
 
-theorem frequently_bounded_of_countable_exceptions {E : Set ℝ} {ν : ℝ → ℕ} {K : ℕ}
+theorem frequently_bounded_of_countable_exceptions {α : Type*} [Preorder α]
+    {E : Set ℝ} {ν : ℝ → α} {K : α}
     (hE : E.Countable) (hν : ∀ r, 0 < r → r ∉ E → ν r ≤ K) :
     ∃ᶠ r in atTop, ν r ≤ K := by
   rw [Filter.frequently_atTop]
