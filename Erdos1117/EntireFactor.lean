@@ -80,4 +80,19 @@ theorem firstGap_pos {f : ℂ → ℂ} (hf : Differentiable ℂ f) (hne : f ≠ 
     exact hpos (by simpa [he] using hc.symm)
   exact Nat.pos_of_ne_zero hn
 
+/-- The extracted Taylor gap is the analytic order of the nonconstant part. -/
+theorem firstGap_order {f : ℂ → ℂ} (hf : Differentiable ℂ f) (hne : f ≠ 0)
+    (hnm : ¬ ∃ (c : ℂ) (m : ℕ), ∀ z, f z = c * z ^ m) :
+    analyticOrderAt (fun z => entireFactor f hf hne z - entireFactor f hf hne 0) 0 =
+      firstGap f hf hne := by
+  have hh := (entireFactor_spec hf hne).1
+  have htop : analyticOrderAt
+      (fun z => entireFactor f hf hne z - entireFactor f hf hne 0) 0 ≠ ⊤ := by
+    intro ht
+    have he := (AnalyticOnNhd.analyticOrderAt_eq_top_iff_eq_zero 0
+      (fun z => (hh.analyticAt z).sub analyticAt_const)).mp ht
+    exact entireFactor_nonconstant hf hne hnm
+      ⟨entireFactor f hf hne 0, fun z => sub_eq_zero.mp (congrFun he z)⟩
+  exact (Nat.cast_analyticOrderNatAt htop).symm
+
 end Erdos1117

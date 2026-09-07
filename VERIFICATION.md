@@ -7,14 +7,15 @@ statements of published results.
 
 ## Statements
 
-[`theorem_1_1_of_entire`](Erdos1117/Main.lean) starts with a nonzero,
+[`theorem_1_1_of_entire_component_data`](Erdos1117/FibreComponents.lean) starts with a nonzero,
 non-monomial entire function, extracts its zero order and first Taylor gap `k`,
 and proves that the maximum-point set has cardinality at most `2k` outside a
-countable set of positive radii. It assumes `GlobalFibreBound`.
-[`checks/Statement.lean`](checks/Statement.lean) checks the factored formulation
-with the global fibre assumption and the maximum-point set expanded.
+countable set of positive radii. It assumes the two component properties below
+for the logarithmic derivative of `f` itself.
+[`checks/Statement.lean`](checks/Statement.lean) expands those properties, the
+regular image and the maximum-point set, with the bound expressed as `∃ k > 0`.
 
-[`theorem_1_1_of_component_data`](Erdos1117/FibreComponents.lean) instead assumes
+The entry point and its factored version `theorem_1_1_of_component_data` assume
 a countable exceptional set `T` and the following two properties of the regular
 image of the product/common-value map:
 
@@ -63,9 +64,15 @@ only entireness of `h` and `h(0) ≠ 0`.
 | Lemma 3.1 and the connectedness of a normalized curve after deleting the exceptional points | `SmallProductsOnComponents` for the actual image |
 
 The two component hypotheses express the required outputs of these arguments.
-They do not replace the arguments with published theorems. In particular, this
-development does not yet give a solution conditional only on published inputs
-under the [Erdős Problems database's contribution rules](https://github.com/teorth/erdosproblems/blob/main/CONTRIBUTING.md).
+The [FC bridge](checks/FormalConjecturesBridge.lean) takes their universal
+statements as parameters: the first supplies `T`, its countability, local
+finiteness relative to the image, and degree constancy; the second supplies
+small products for that same `T`. It calls the entire-function entry point.
+
+The FC statement keeps the second question open and records the conditional
+implications as variants, with both assumed claims stated in the problem file. This does not meet the distinct
+requirement of a solution conditional only on published inputs in the
+[teorth database's contribution rules](https://github.com/teorth/erdosproblems/blob/main/CONTRIBUTING.md).
 
 ## Reproduction
 
@@ -83,4 +90,4 @@ LEAN_NUM_THREADS=2 lake env leanchecker -v Erdos1117
 The guards require `propext`, `Classical.choice`, and `Quot.sound`; theorem
 parameters remain assumptions regardless of this axiom list. The
 [workflow](.github/workflows/lean.yml) also replays the project declarations
-through the kernel. Tag `v0.2.0` records this partial formalization.
+through the kernel. Tag `v0.3.0` records this partial formalization.

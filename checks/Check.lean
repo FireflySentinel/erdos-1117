@@ -71,3 +71,7 @@ import Erdos1117
 /-- info: 'Erdos1117.factored_productFiber_finite' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms Erdos1117.factored_productFiber_finite
+
+/-- info: 'Erdos1117.theorem_1_1_of_entire_component_data' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.theorem_1_1_of_entire_component_data

@@ -17,22 +17,23 @@ LEAN_NUM_THREADS=2 lake env leanchecker -v Erdos1117
 
 ## Exact statement
 
-[`theorem_1_1_of_entire`](Erdos1117/Main.lean) starts with a nonzero,
+[`theorem_1_1_of_entire_component_data`](Erdos1117/FibreComponents.lean) starts with a nonzero,
 non-monomial entire function and extracts its zero order and Taylor gap $k$.
-Assuming [`GlobalFibreBound`](Erdos1117/FiberApplication.lean), it proves
+Assuming the two component properties below, it proves
 `(maximumPoints f r).encard ≤ 2 * k` outside a countable set of positive radii
 and at arbitrarily large radii. The use of `encard` includes finiteness in the bound.
 
-[`theorem_1_1_of_component_data`](Erdos1117/FibreComponents.lean) derives the same
-conclusion from constancy of the total fibre size and small products on each
-regular image component. These two properties remain assumptions from the
+The hypotheses are constancy of the total fibre size and small products on each
+regular image component, for the same countable exceptional set. They remain assumptions from the
 manuscript's analytic argument. Properness is proved for a supplied
 numerator-denominator representation; finiteness of the relevant fibres is
 also proved directly for the actual logarithmic derivative.
 
 This is a partial formalization. [VERIFICATION.md](VERIFICATION.md) gives the
 remaining dependencies and their literature sources;
-[Statement.lean](checks/Statement.lean) expands the global input and the conclusion.
+[Statement.lean](checks/Statement.lean) expands both component inputs and the conclusion.
+[FormalConjecturesBridge.lean](checks/FormalConjecturesBridge.lean) derives the
+negative answer from the two named analytic claims used by the conditional FC statement.
 
 ## Proof correspondence
 
@@ -44,7 +45,7 @@ remaining dependencies and their literature sources;
 | Finite fibres for the actual logarithmic derivative | [FactoredCorrespondence.lean](Erdos1117/FactoredCorrespondence.lean), `factored_productFiber_finite` |
 | Proposition 4.2, propagation of the local bound across regular components | [FibreComponents.lean](Erdos1117/FibreComponents.lean), `globalFibreBound_of_component_data` |
 | Maximum-point injection and the bound off a countable set | [FiberApplication.lean](Erdos1117/FiberApplication.lean), `maximum_bound_off_countable_of_global_fiber_bound` |
-| Theorem 1.1, conditional on the global estimate | [Main.lean](Erdos1117/Main.lean), `theorem_1_1_of_entire` |
+| Theorem 1.1, starting from the entire function | [FibreComponents.lean](Erdos1117/FibreComponents.lean), `theorem_1_1_of_entire_component_data` |
 | Remark 5.1, sharpness of the factor 2 | [SharpExample.lean](Erdos1117/SharpExample.lean) |
 
 ## Use of generative AI

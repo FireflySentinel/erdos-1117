@@ -81,4 +81,25 @@ theorem theorem_1_1_of_component_data (m k : ℕ) {h : ℂ → ℂ}
   theorem_1_1_of_global m k hh h0 hnc
     (globalFibreBound_of_component_data m k hh h0 hk horder T hT hdegree hsmall)
 
+/-- The entire-function entry point with the two component hypotheses. -/
+theorem theorem_1_1_of_entire_component_data (f : ℂ → ℂ)
+    (hf : Differentiable ℂ f) (hne : f ≠ 0)
+    (hnm : ¬ ∃ (c : ℂ) (m : ℕ), ∀ z, f z = c * z ^ m)
+    (T : Set (ℂ × ℂ)) (hT : T.Countable)
+    (hdegree : FibreDegreeConstancy (logarithmicDerivative f)
+      (reflected (logarithmicDerivative f)) (analyticOrderNatAt f 0) T)
+    (hsmall : SmallProductsOnComponents (logarithmicDerivative f)
+      (reflected (logarithmicDerivative f)) (analyticOrderNatAt f 0) T) :
+    0 < firstGap f hf hne ∧
+    (∃ E : Set ℝ, E.Countable ∧ E ⊆ Ioi 0 ∧ ∀ r : ℝ, 0 < r → r ∉ E →
+      (maximumPoints f r).encard ≤ 2 * firstGap f hf hne) ∧
+    ∃ᶠ r in atTop, (maximumPoints f r).encard ≤ 2 * firstGap f hf hne := by
+  obtain ⟨hh, h0, heq⟩ := entireFactor_spec hf hne
+  have hk := firstGap_pos hf hne hnm
+  have hb := theorem_1_1_of_component_data (analyticOrderNatAt f 0) (firstGap f hf hne)
+    hh h0 (entireFactor_nonconstant hf hne hnm) hk (firstGap_order hf hne hnm) T hT
+    (by simpa only [← heq] using hdegree) (by simpa only [← heq] using hsmall)
+  rw [← heq] at hb
+  exact ⟨hk, hb⟩
+
 end Erdos1117
