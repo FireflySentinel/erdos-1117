@@ -504,10 +504,14 @@ by the author. The arguments of Section~\ref{sec:maxima}, the local
 fibre count \eqref{eq:small-fibre}, and Remark~\ref{rem:sharp} are
 formalized in Lean 4 with Mathlib at
 \url{https://github.com/FireflySentinel/erdos-1117}.
-Lemma~\ref{lem:small-products}, Lemma~\ref{lem:proper}, and
-Proposition~\ref{prop:degree} are not formalized; their global fibre
-estimate enters the final Lean theorem as the hypothesis
-\texttt{GlobalFibreBound}.
+The properness assertion of Lemma~\ref{lem:proper} is formalized for a
+supplied entire numerator-denominator representation; finiteness of
+the fibres with \(\lambda\notin\{0,m\}\) is proved directly for \(f\).
+The propagation of the total fibre bound in Proposition~\ref{prop:degree}
+is also formalized. Lemma~\ref{lem:small-products} and the
+analytic-curve arguments establishing the regular component properties
+remain outside the formalization. The final Lean theorem is conditional
+on those properties, or on their consequence \texttt{GlobalFibreBound}.
 
 \begin{thebibliography}{10}
 

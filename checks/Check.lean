@@ -43,3 +43,31 @@ import Erdos1117
 /-- info: 'Erdos1117.small_product_fiber_bound_of_order' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms Erdos1117.small_product_fiber_bound_of_order
+
+/-- info: 'Erdos1117.correspondenceOver_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.correspondenceOver_isCompact
+
+/-- info: 'Erdos1117.correspondenceMap_isProper' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.correspondenceMap_isProper
+
+/-- info: 'Erdos1117.correspondenceMap_fiber_finite' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.correspondenceMap_fiber_finite
+
+/-- info: 'Erdos1117.globalFibreBound_of_component_data' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.globalFibreBound_of_component_data
+
+/-- info: 'Erdos1117.theorem_1_1_of_component_data' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.theorem_1_1_of_component_data
+
+/-- info: 'Erdos1117.correspondenceMap_range_isClosed' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.correspondenceMap_range_isClosed
+
+/-- info: 'Erdos1117.factored_productFiber_finite' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Erdos1117.factored_productFiber_finite

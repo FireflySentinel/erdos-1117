@@ -1,6 +1,7 @@
 name = "erdos1117"
-version = "0.1.0"
+version = "0.2.0"
 defaultTargets = ["Erdos1117"]
+testDriver = "Checks"
 
 [[require]]
 name = "mathlib"
@@ -9,3 +10,8 @@ rev = "v4.33.0"
 
 [[lean_lib]]
 name = "Erdos1117"
+
+[[lean_lib]]
+name = "Checks"
+srcDir = "checks"
+roots = ["Check", "Statement"]

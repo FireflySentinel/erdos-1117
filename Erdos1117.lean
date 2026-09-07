@@ -1,3 +1,6 @@
 import Erdos1117.Main
 import Erdos1117.FactoredCoordinates
 import Erdos1117.SharpExample
+import Erdos1117.ProperCorrespondence
+import Erdos1117.FibreComponents
+import Erdos1117.FactoredCorrespondence
