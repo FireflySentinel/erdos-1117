@@ -1,8 +1,11 @@
-# A negative answer to a question of Erdős on maximum modulus points
+# Erdős Problem #1117: the second question answered in the negative
 
-Preprint answering the second question of
-[Erdős Problem #1117](https://www.erdosproblems.com/1117) in the negative: no non-monomial
-entire function has $\nu_f(r)\to\infty$.
+Lean 4 formalization for [Erdős Problem #1117](https://www.erdosproblems.com/1117):
+no non-monomial entire function has $\nu_f(r)\to\infty$.
+[`theorem_1_1_of_entire_component_data`](Erdos1117/FibreComponents.lean) derives
+`(maximumPoints f r).encard ≤ 2 * k` outside a countable set of radii, from two
+component properties that remain hypotheses of the manuscript's analytic argument.
+[VERIFICATION.md](VERIFICATION.md) states them and their literature sources.
 
 ## Build and check
 
@@ -14,26 +17,6 @@ lake build
 lake test
 LEAN_NUM_THREADS=2 lake env leanchecker -v Erdos1117
 ```
-
-## Exact statement
-
-[`theorem_1_1_of_entire_component_data`](Erdos1117/FibreComponents.lean) starts with a nonzero,
-non-monomial entire function and extracts its zero order and Taylor gap $k$.
-Assuming the two component properties below, it proves
-`(maximumPoints f r).encard ≤ 2 * k` outside a countable set of positive radii
-and at arbitrarily large radii. The use of `encard` includes finiteness in the bound.
-
-The hypotheses are constancy of the total fibre size and small products on each
-regular image component, for the same countable exceptional set. They remain assumptions from the
-manuscript's analytic argument. Properness is proved for a supplied
-numerator-denominator representation; finiteness of the relevant fibres is
-also proved directly for the actual logarithmic derivative.
-
-This is a partial formalization. [VERIFICATION.md](VERIFICATION.md) gives the
-remaining dependencies and their literature sources;
-[Statement.lean](checks/Statement.lean) expands both component inputs and the conclusion.
-[FormalConjecturesBridge.lean](checks/FormalConjecturesBridge.lean) derives the
-negative answer from the two named analytic claims used by the conditional FC statement.
 
 ## Proof correspondence
 
@@ -48,8 +31,12 @@ negative answer from the two named analytic claims used by the conditional FC st
 | Theorem 1.1, starting from the entire function | [FibreComponents.lean](Erdos1117/FibreComponents.lean), `theorem_1_1_of_entire_component_data` |
 | Remark 5.1, sharpness of the factor 2 | [SharpExample.lean](Erdos1117/SharpExample.lean) |
 
+[Statement.lean](checks/Statement.lean) expands both component inputs and the conclusion;
+[FormalConjecturesBridge.lean](checks/FormalConjecturesBridge.lean) derives the negative
+answer from the two named analytic claims.
+
 ## Use of generative AI
 
-The proofs were generated with GPT-6 (Codex) and checked step by step by the author.
-The Lean formalization was developed with OpenAI Codex (GPT-6); its coverage and
-remaining hypothesis are listed above.
+GPT-6 Astra proposed the argument and drafted the manuscript.
+The Lean formalization was generated with OpenAI Codex (GPT-6).
+The author checked the arguments step by step and is responsible for the content.
