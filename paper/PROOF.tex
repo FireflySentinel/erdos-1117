@@ -55,14 +55,11 @@ For a nonzero entire function \(f\), put
  \nu_f(r)=\#\{z:|z|=r,\ |f(z)|=M(r,f)\}.
 \]
 If \(f\) is not a monomial, then \(\nu_f(r)\) is finite for every
-\(r>0\).\footnote{If \(|f|=c>0\) on an arc of \(|z|=r\), the identity
- theorem gives \(f(z)f^\#(r^2/z)=c^2\) on \(\C^*\), where
- \(f^\#(z)=\overline{f(\overline z)}\). Writing \(f=z^m h\),
- \(h(0)\ne0\), and letting \(z\to\infty\) gives
- \(f(z)=O(|z|^m)\). Thus \(f\) is a polynomial of degree at most
- \(m\), hence a monomial. For non-monomial \(f\), the real-analytic
- function \(\theta\mapsto|f(re^{i\theta})|^2\) has a discrete maximum
- set on the compact circle, hence finitely many maximum points.}
+\(r>0\).\footnote{If \(|f|\) were constant on \(|z|=r\), the identity
+ theorem applied to \(f(z)f^\#(r^2/z)\), where
+ \(f^\#(z)=\overline{f(\overline z)}\), would force \(f\) to be a
+ monomial. Otherwise \(\theta\mapsto|f(re^{i\theta})|^2\) is nonconstant
+ and real analytic on the compact circle, so its maximum set is finite.}
 Erd\H{o}s asked whether a single such function can satisfy
 \[
  \limsup_{r\to\infty}\nu_f(r)=\infty,
@@ -76,20 +73,6 @@ Pardo-Sim\'on and Sixsmith \cite{PS} obtained such an example of finite
 order. Gl\"ucksam and Pardo-Sim\'on \cite{GP} constructed an approximate
 analogue of the second property, with many separated arcs on which
 the modulus is close to its maximum.
-
-There is also a classical local theory near the origin. Dividing \(f\)
-in \eqref{eq:taylor} by \(c_0z^m\) leaves its maximum modulus points
-unchanged and gives the normalization \(1+az^k+O(z^{k+1})\).
-Hayman \cite[Theorem I(iii), pp.~142--143]{Hayman} proved that its
-maximum modulus set near zero consists of at most \(k\) analytic curves.
-Evdoridou, Pardo-Sim\'on, and Sixsmith \cite[Theorem 1.4(b)]{EPS}
-show that each curve meets every sufficiently small circle exactly once.
-It follows that \(\nu_f(r)\le k\) for all sufficiently small \(r>0\).
-Theorem~\ref{thm:main} is a global counterpart of this local bound:
-the same \(k\) controls the count at all but countably many radii.
-The unbounded upper limits in \cite{HP,PS} occur on the exceptional radii.
-
-We prove that the answer to the second question is negative.
 
 \begin{theorem}\label{thm:main}
 Let \(f\) be a nonzero entire function that is not a monomial, and write
@@ -111,6 +94,17 @@ The integer \(k\) is the difference between the degrees of the first
 two nonzero terms of \(f\). The factor \(2\) is attained by an explicit
 example given in Remark~\ref{rem:sharp}.
 
+There is also a classical local theory near the origin. Dividing \(f\)
+in \eqref{eq:taylor} by \(c_0z^m\) leaves its maximum modulus points
+unchanged and gives the normalization \(1+az^k+O(z^{k+1})\).
+Hayman \cite[Theorem I(iii), pp.~142--143]{Hayman} proved that its
+maximum modulus set near zero consists of at most \(k\) analytic curves.
+Evdoridou, Pardo-Sim\'on, and Sixsmith \cite[Theorem 1.4(b)]{EPS}
+show that each curve meets every sufficiently small circle exactly once.
+It follows that \(\nu_f(r)\le k\) for all sufficiently small \(r>0\).
+Theorem~\ref{thm:main} instead gives a bound at arbitrary radii outside
+a countable exceptional set.
+
 Set \(A=zf'/f\). At radii where \(\log M(r,f)\) is differentiable
 with respect to \(\log r\), all maximum modulus points have the same
 real value of \(A\). Hence they determine points \((z,\overline z)\)
@@ -130,6 +124,10 @@ Let \(F\) be entire on \(\C^2\), and suppose that
 The projection to the \(z\)-plane of the maximal analytic continuation
 of the implicit germ \(w=w(z)\) through \((a,b)\) is dense in \(\C\).
 \end{lemma}
+
+This follows from the Iversen property stated in \cite{Eremenko}:
+the germ continues along an arbitrarily small perturbation of any
+path from \(a\).
 
 Following Bergweiler, Rippon, and Stallard
 \cite[Definition 2.1]{BRS}, an unbounded domain \(D\subset\C\), with
@@ -187,8 +185,7 @@ Choose \(\delta\in(0,1)\) small enough that
 has compact closure in the coordinate neighbourhood.
 For every \(|\lambda-m|<\delta\), the equation \(A(z)=\lambda\)
 has exactly \(k\) roots in \(V\), counted with multiplicity.
-They are distinct when \(\lambda\ne m\), and there is a constant
-\(C\) such that all of them satisfy
+There is a constant \(C\) such that all of them satisfy
 \begin{equation}\label{eq:root-bound}
  |z|\le C|\lambda-m|^{1/k}.
 \end{equation}
@@ -231,17 +228,15 @@ Every irreducible component \(X\) of \(\X\) contains a sequence
 \begin{proof}
 Choose a regular point of \(X\) at which \(F_w\ne0\) and apply
 Lemma~\ref{lem:continuation} to the corresponding implicit germ.
-The continued graph stays in \(X\) by the identity theorem on its
-connected Riemann surface of analytic continuation.
+Analytic continuation of this germ remains in \(X\).
 Since its projection is dense, the continuation reaches a point
 \((z_0,w_0)\in X\) with
 \[
  z_0\in V\setminus\{0\},\qquad
  0<|A(z_0)-m|<\delta.
 \]
-The value \(B(w_0)=A(z_0)\) is finite: since \(q(z_0)\ne0\),
-\(F(z_0,w_0)=0\) and the absence of common zeros of \(p^\#,q^\#\)
-exclude a pole at \(w_0\).
+Then \(w_0\) is not a pole of \(B\), since \(q(z_0)\ne0\),
+\(F(z_0,w_0)=0\), and \(p^\#,q^\#\) have no common zero.
 Let \(U\) be the connected component of \(\{|B-m|<\delta\}\)
 containing \(w_0\).
 In \(V\times U\), consider the analytic curve
@@ -281,15 +276,20 @@ and satisfies
 \]
 The maximum principle shows that \(U\) is unbounded.
 
-We claim that \(\C\setminus U\) is unbounded. Otherwise \(U\)
-contains a neighbourhood of infinity, on which \(|B-m|<\delta<1\).
-Thus \(B\) is meromorphic on \(\C\) and holomorphic and bounded near
-infinity, hence rational; so is \(A=B^\#\).
-Since \(f'/f=A/z\) is rational, factoring out the finitely many zeros
-of \(f\) gives \(f=Pe^R\) for polynomials \(P,R\). Therefore
-\(A=zP'/P+zR'\). Boundedness at infinity forces \(R\) to be constant,
-so \(A\to\deg P\); the bound \(|A-m|<\delta<1\) gives \(\deg P=m\).
-Since \(z^m\) divides \(P\), \(f\) is a monomial, a contradiction.
+We claim that \(\C\setminus U\) is unbounded. If \(f\) has a zero
+other than the origin, choose arbitrarily large \(R\) such that
+\(|z|=R\) contains no zero of \(f\). By the argument principle and
+\(B=A^\#\),
+\[
+ \frac1{2\pi}\int_0^{2\pi}\bigl(B(Re^{i\theta})-m\bigr)\,d\theta
+ =n(R,f)-m\ge1,
+\]
+where \(n(R,f)\) counts the zeros in \(|z|<R\) with multiplicity.
+Since \(\delta<1\), the circle cannot lie in \(\{|B-m|<\delta\}\).
+If \(f\) has no zero other than possibly the origin, then \(B-m\)
+is a nonconstant entire function, whose maximum modulus exceeds
+\(\delta\) on arbitrarily large circles. Thus \(\C\setminus U\)
+is unbounded.
 
 Consequently, \(U\) is a direct tract of \(Q\) with boundary value
 one. Define \(u=\log|Q|\) in \(U\), and \(u=0\) outside \(U\).
@@ -503,14 +503,12 @@ The arguments of Section~\ref{sec:maxima}, the local
 fibre count \eqref{eq:small-fibre}, and Remark~\ref{rem:sharp} are
 formalized in Lean 4 with Mathlib at
 \url{https://github.com/FireflySentinel/erdos-1117}.
-The properness assertion of Lemma~\ref{lem:proper} is formalized for a
-supplied entire numerator-denominator representation; finiteness of
-the fibres with \(\lambda\notin\{0,m\}\) is proved directly for \(f\).
-The propagation of the total fibre bound in Proposition~\ref{prop:degree}
-is also formalized. Lemma~\ref{lem:small-products} and the
-analytic-curve arguments establishing the regular component properties
-remain outside the formalization. The final Lean theorem is conditional
-on those properties, or on their consequence \texttt{GlobalFibreBound}.
+Lemma~\ref{lem:small-products} and the covering argument of
+Proposition~\ref{prop:degree} are not formalized.
+Given a nonzero, non-monomial entire \(f\), the final Lean theorem
+derives \eqref{eq:main-bound} assuming only the fibre bound of
+Proposition~\ref{prop:degree} for \(s=r^2>0\), real \(\lambda>m\),
+and all \(r\) outside a countable set (\texttt{GlobalFibreBound}).
 
 \section*{Declaration of generative AI use}
 
